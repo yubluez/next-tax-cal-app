@@ -11,13 +11,10 @@ import TaxBracketTable from "@/components/TaxBracketTable";
 import { calculateTax, calculateExpense } from "@/lib/taxCalculator";
 
 export default function TaxCalculatorPage() {
-  // ค่าเริ่มต้น:
-  // รายได้รวมต่อปี: 360,000 บาท (เช่น เงินเดือน 30,000 บ./เดือน เพื่อให้เห็นตัวอย่างการคำนวณทันที)
-  // ค่าลดหย่อนส่วนตัว: 60,000 บาท (ตามโจทย์ระบุ ค่าเริ่มต้น 60,000 บาท แก้ไขได้)
-  // ค่าลดหย่อนอื่น ๆ: 9,000 บาท (ไม่จำกัดเพดาน ใส่เท่าไหร่ก็ได้ หรือเว้นว่างได้)
-  const [income, setIncome] = useState<number>(360000);
+  // ค่าเริ่มต้น: เซ็ตเป็นค่าว่าง (0) ทั้งหมด พร้อมให้ผู้ใช้กรอกข้อมูลได้ทันที
+  const [income, setIncome] = useState<number>(0);
   const [personalDeduction, setPersonalDeduction] = useState<number>(60000);
-  const [otherDeductions, setOtherDeductions] = useState<number>(9000);
+  const [otherDeductions, setOtherDeductions] = useState<number>(0);
 
   // คำนวณค่าใช้จ่ายอัตโนมัติ (50% สูงสุด 100,000 บาท)
   const calculatedExpense = useMemo(() => {
@@ -29,10 +26,10 @@ export default function TaxCalculatorPage() {
     return calculateTax(income, personalDeduction, otherDeductions);
   }, [income, personalDeduction, otherDeductions]);
 
-  // ฟังก์ชันรีเซ็ตค่า
+  // ฟังก์ชันรีเซ็ตค่า: ล้างค่าเป็นค่าว่างทั้งหมด
   const handleReset = () => {
     setIncome(0);
-    setPersonalDeduction(60000);
+    setPersonalDeduction(0);
     setOtherDeductions(0);
   };
 

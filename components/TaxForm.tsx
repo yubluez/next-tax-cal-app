@@ -24,13 +24,6 @@ export default function TaxForm({
   setOtherDeductions,
   onReset,
 }: TaxFormProps) {
-  // Quick income presets for easy testing
-  const presets = [
-    { label: "300,000 บ./ปี (2.5 หมื่น/ด.)", value: 300000 },
-    { label: "600,000 บ./ปี (5 หมื่น/ด.)", value: 600000 },
-    { label: "1,200,000 บ./ปี (1 แสน/ด.)", value: 1200000 },
-    { label: "2,500,000 บ./ปี", value: 2500000 },
-  ];
 
   return (
     <div className="bg-white rounded-2xl border border-blue-100 shadow-sm p-6 sm:p-8">
