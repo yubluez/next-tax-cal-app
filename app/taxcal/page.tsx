@@ -40,35 +40,16 @@ export default function TaxCalculatorPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 selection:bg-blue-200 selection:text-blue-900">
-      <Navbar />
-
+    <div className="min-h-screen pt-12 flex flex-col bg-slate-50 text-slate-800 selection:bg-blue-200 selection:text-blue-900">
       <main className="flex-1 py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb & Header */}
           <div className="mb-8">
-            <Link
-              href="/"
-              className="hover:text-blue-600 transition-colors flex items-center gap-1 text-xs sm:text-sm text-slate-500 mb-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-3.5 h-3.5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-                />
-              </svg>
-              กลับหน้าหลัก
-            </Link>
-
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 text-sky-600 text-xs font-semibold backdrop-blur-xs border border-sky-400/30">
+              <span className="w-2 h-2 rounded-full bg-sky-300" />
+              TAX CALCULATOR
+            </span>
+            <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
                 คำนวณภาษีเงินได้บุคคลธรรมดา
               </h1>
